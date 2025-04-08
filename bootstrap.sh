@@ -1,6 +1,6 @@
 #!/bin/bash
 kind create cluster --config cluster.yml # create work cluster on the configuration file cluster.yml.
-sleep 5 
+sleep 5
 kubectl taint nodes -l app=mysql app=mysql:NoSchedule # Applies a taint (a restriction) to all nodes with the label app=mysql
 helm install todoapp .infrastructure/helm-chart/todoapp # Installs a Helm chart named todoapp from the local directory helm-chart/todoapp.
 # Install Ingress Controller
